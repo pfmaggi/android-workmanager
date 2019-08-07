@@ -113,7 +113,7 @@ class BlurActivity : AppCompatActivity() {
 
                 // If there is an output file show "See File" button
                 if (!outputImageUri.isNullOrEmpty()) {
-                    viewModel.setOutputUri(outputImageUri as String)
+                    viewModel.setOutputUri(outputImageUri)
                     outputButton.visibility = View.VISIBLE
                 }
             } else {

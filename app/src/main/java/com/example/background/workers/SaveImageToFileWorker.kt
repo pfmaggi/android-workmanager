@@ -43,6 +43,7 @@ class SaveImageToFileWorker(ctx: Context, params: WorkerParameters) : Worker(ctx
             Locale.getDefault()
     )
 
+    @Suppress("DEPRECATION")
     override fun doWork(): Result {
         // Makes a notification when the work starts and slows down the work so that
         // it's easier to see each WorkRequest start, even on emulated devices
