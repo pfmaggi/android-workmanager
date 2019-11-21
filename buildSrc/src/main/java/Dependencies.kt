@@ -18,16 +18,16 @@ object Versions {
     val compileSdk = 29
     val minSdk = 16
     val targetSdk = 28
-    val android_gradle_plugin = "3.4.2"
+    val android_gradle_plugin = "4.0.0-alpha04"
     val androidxArch = "2.0.0"
     val appcompat = "1.1.0-rc01"
-    val constraint_layout = "2.0.0-beta2"
+    val constraint_layout = "2.0.0-beta3"
     val glide = "4.9.0"
     val junit = "1.1.0"
-    val kotlin = "1.3.41"
+    val kotlin = "1.3.60"
     val lifecycle = "2.0.0"
     val test_rules = "1.1.0-beta02"
     val test_runner = "1.1.0-beta02"
     val timber = "4.7.1"
-    val work = "2.1.0"
+    val work = "2.3.0-beta01"
 }
