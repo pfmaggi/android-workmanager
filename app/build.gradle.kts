@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 /*
  * Copyright (C) 2018 The Android Open Source Project
  *
@@ -16,12 +14,16 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
  * limitations under the License.
  */
 
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
 }
+
+val versions:LibVersions by rootProject.extra
 
 android {
     compileSdkVersion(Versions.compileSdk)
@@ -63,17 +65,17 @@ tasks.withType<KotlinCompile> {
 }
 
 dependencies {
-    implementation("androidx.appcompat:appcompat:${Versions.appcompat}")
-    implementation("androidx.constraintlayout:constraintlayout:${Versions.constraint_layout}")
-    implementation("androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}")
-    implementation("androidx.work:work-runtime-ktx:${Versions.work}")
-    implementation("com.github.bumptech.glide:glide:${Versions.glide}")
-    implementation("com.jakewharton.timber:timber:${Versions.timber}")
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlin}")
+    implementation("${Libs.APPCOMPAT}:${versions.appcompat}")
+    implementation("${Libs.CONSTRAINTLAYOUT}:${versions.constraint_layout}")
+    implementation("${Libs.LIFECYCLE_EXTENSION}:${versions.lifecycle}")
+    implementation("${Libs.WORKMANAGER_KTS}:${versions.work}")
+    implementation("${Libs.GLIDE}:${versions.glide}")
+    implementation("${Libs.TIMBER}:${versions.timber}")
+    implementation("${Libs.KT_STDLIB_JDK7}:${versions.kotlin}")
 
-    androidTestImplementation("androidx.arch.core:core-testing:${Versions.androidxArch}")
-    androidTestImplementation("androidx.test.ext:junit:${Versions.junit}")
-    androidTestImplementation("androidx.test:rules:${Versions.test_rules}")
-    androidTestImplementation("androidx.test:runner:${Versions.test_runner}")
-    androidTestImplementation("androidx.work:work-testing:${Versions.work}")
+    androidTestImplementation("${Libs.TEST_CORE}:${versions.androidxArch}")
+    androidTestImplementation("${Libs.TEST_JUNIT}:${versions.junit}")
+    androidTestImplementation("${Libs.TEST_RULES}:${versions.test_rules}")
+    androidTestImplementation("${Libs.TEST_RUNNER}:${versions.test_runner}")
+    androidTestImplementation("${Libs.TEST_WORMANAGER}:${versions.work}")
 }

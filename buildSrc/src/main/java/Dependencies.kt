@@ -18,16 +18,35 @@ object Versions {
     val compileSdk = 29
     val minSdk = 16
     val targetSdk = 28
-    val android_gradle_plugin = "4.0.0-alpha04"
-    val androidxArch = "2.0.0"
-    val appcompat = "1.1.0-rc01"
-    val constraint_layout = "2.0.0-beta3"
-    val glide = "4.9.0"
-    val junit = "1.1.0"
+    val android_gradle_plugin = "4.0.0-alpha08"
     val kotlin = "1.3.60"
-    val lifecycle = "2.0.0"
-    val test_rules = "1.1.0-beta02"
-    val test_runner = "1.1.0-beta02"
-    val timber = "4.7.1"
-    val work = "2.3.0-beta01"
+}
+
+data class LibVersions(
+        val androidxArch: String,
+        val appcompat: String,
+        val constraint_layout: String,
+        val glide: String,
+        val junit: String,
+        val kotlin: String,
+        val lifecycle: String,
+        val test_rules: String,
+        val test_runner: String,
+        val timber: String,
+        val work: String
+)
+
+object Libs {
+    val APPCOMPAT = "androidx.appcompat:appcompat"
+    val CONSTRAINTLAYOUT = "androidx.constraintlayout:constraintlayout"
+    val LIFECYCLE_EXTENSION = "androidx.lifecycle:lifecycle-extensions"
+    val WORKMANAGER_KTS = "androidx.work:work-runtime-ktx"
+    val GLIDE = "com.github.bumptech.glide:glide"
+    val TIMBER = "com.jakewharton.timber:timber"
+    val KT_STDLIB_JDK7 = "org.jetbrains.kotlin:kotlin-stdlib-jdk7"
+    val TEST_CORE = "androidx.arch.core:core-testing"
+    val TEST_JUNIT = "androidx.test.ext:junit"
+    val TEST_RULES = "androidx.test:rules"
+    val TEST_RUNNER = "androidx.test:runner"
+    val TEST_WORMANAGER = "androidx.work:work-testing"
 }
