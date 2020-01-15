@@ -23,7 +23,7 @@ plugins {
     kotlin("kapt")
 }
 
-val versions:LibVersions by rootProject.extra
+val versions: LibVersions by rootProject.extra
 
 android {
     compileSdkVersion(Versions.compileSdk)
