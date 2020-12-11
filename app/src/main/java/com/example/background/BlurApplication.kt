@@ -17,10 +17,21 @@
 package com.example.background
 
 import android.app.Application
+import androidx.work.Configuration
+import androidx.work.WorkManager
 import timber.log.Timber
 import timber.log.Timber.DebugTree
 
-class BlurApplication() : Application() {
+class BlurApplication() : Application(), Configuration.Provider {
+    override fun getWorkManagerConfiguration(): Configuration =
+            Configuration.Builder()
+                    .setMinimumLoggingLevel(if (BuildConfig.DEBUG) {
+                        android.util.Log.DEBUG
+                    } else {
+                        android.util.Log.ERROR
+                    })
+                    .build()
+
     override fun onCreate() {
         super.onCreate()
         if (BuildConfig.DEBUG) {
